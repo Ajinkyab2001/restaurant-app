@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant App</title>
+    <style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: rgb(61, 175, 118);
+		}
+		
+		form {
+			background-color: lightblue;
+			max-width: 500px;
+			margin: 0 auto;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		}
+		
+		h1 {
+			text-align: center;
+			color: #333;
+		}
+		
+		label {
+			display: block;
+			margin-bottom: 5px;
+			color: #555;
+		}
+
+        ul {
+            list-style: none;
+        }
+  
+        ul li {
+    padding: 5px;
+    background: #f4f4f4;
+    margin-bottom: 20px;
+    border-radius: 5px;
+        }
+  
+  
+  	
+		input[type="text"],
+		input[type="price"],
+		input[type="tel"] {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 20px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+		}
+		
+		input[type="submit"] {
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+		
+		input[type="submit"]:hover {
+			background-color: #555;
+		}
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <h1>Order Information</h1>
+	<form id="myForm" class="my-form">
+		<label for="dish-name">Dish Name:</label>
+		<input type="text" id="dish-name" name="dish-name" required><br>
+
+		<label for="order-type">Order Type:</label>
+		<!-- <input type="text" id="last-name" name="last-name" required><br> -->
+		<select name="order-type" id="order-type">
+			<option value="DineIN">DineIn</option>
+			<option value="TakeOut">TakeOut</option>
+			<!-- <option value="lgbtq">LGBTQ</option> -->
+		</select><br>
+
+		<label for="price">Price:</label>
+		<input type="number" id="price" name="price" required><br>
+
+		<label for="quantity">Quantity:</label>
+		<input type="number" id="quantity" name="quantity" required><br>
+
+		<input type="submit" value="Submit">
+	</form>
+
+    <h2 class="title">Order List</h2>
+    <ul id="items" class="list-group">
+    </ul>
+
+    
+    <script src="restaurant.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+</body>
+</html>
